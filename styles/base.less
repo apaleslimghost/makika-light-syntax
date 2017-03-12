@@ -1,6 +1,10 @@
 @import "syntax-variables";
 
-atom-text-editor, :host {
+atom-text-editor::shadow .line.cursor-line.highlight-line {
+  background: @syntax-gutter-background-color-selected !important;
+}
+
+atom-text-editor {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 
@@ -47,18 +51,16 @@ atom-text-editor, :host {
   }
 
   .selection .region {
-    background-color: @syntax-selection-color;
+    background-color: @syntax-selection-color !important;
   }
 }
 
-atom-text-editor .search-results .marker .region,
-:host .search-results .marker .region {
+atom-text-editor .search-results .marker .region {
   background-color: transparent;
   border: 1px solid @syntax-result-marker-color;
 }
 
-atom-text-editor .search-results .marker.current-result .region,
-:host .search-results .marker.current-result .region {
+atom-text-editor .search-results .marker.current-result .region {
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
@@ -69,12 +71,12 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .keyword {
-  color: @pink-400;
-  background-color: fadeout(@pink-A200, @background-fade);
+  color: @pink-700;
+  background-color: fadeout(@pink-A400, @background-fade);
 
   &.operator {
-    color: @orange-400;
-    background-color: fadeout(@orange-A200, @background-fade);
+    color: @orange-700;
+    background-color: fadeout(@orange-A400, @background-fade);
   }
 }
 
@@ -92,12 +94,12 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .constant {
-  color: @purple-100;
-  background-color: fadeout(@purple-A200, @background-fade);
+  color: @purple-700;
+  background-color: fadeout(@purple-A400, @background-fade);
 
   &.other {
-    color: @light-blue-200;
-    background-color: fadeout(@light-blue-A200, @background-fade);
+    color: @light-blue-700;
+    background-color: fadeout(@light-blue-A400, @background-fade);
   }
 }
 
@@ -123,8 +125,8 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .string {
-  color: @amber-200;
-  background-color: fadeout(@amber-A200, @background-fade);
+  color: @yellow-900;
+  background-color: fadeout(@yellow-A400, @background-fade);
 
 
   &.regexp {
@@ -141,7 +143,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .punctuation {
-  color: mix(@grey-300, @blue-grey-300);
+  color: mix(@grey-500, @blue-grey-500);
 
   &.definition {
 
@@ -183,14 +185,14 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .support {
-  color: @teal-A400;
-  background: fadeout(@teal-A200, @background-fade);
+  color: @teal-A700;
+  background: fadeout(@teal-A400, @background-fade);
 }
 
 .entity {
   &.name.function {
-    color: @lime-A400;
-    background: fadeout(@lime-A200, @background-fade);
+    color: @lime-A700;
+    background: fadeout(@lime-A400, @background-fade);
 
     .function-call &,
     .method-call & {
@@ -324,7 +326,6 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 }
 
-atom-text-editor[mini] .scroll-view,
-:host([mini]) .scroll-view {
+atom-text-editor[mini] .scroll-view {
   padding-left: 1px;
 }

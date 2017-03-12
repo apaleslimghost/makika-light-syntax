@@ -1,13 +1,13 @@
 {
-  "name": "makika-syntax",
+  "name": "makika-light-syntax",
   "theme": "syntax",
   "version": "0.0.0",
-  "description": "Monokai-like theme with Material colours",
+  "description": "Monokai-like theme with Material colours - light version",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atom/makika-syntax",
+  "repository": "https://github.com/quarterto/makika-light-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
